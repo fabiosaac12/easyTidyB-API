@@ -1,0 +1,7 @@
+.venv
+__pycache__
+helpers/__pycache__
+*.sql
+.localdb-init.sh
+.onlinedb-init.sh
+Dockerfile
