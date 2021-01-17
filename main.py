@@ -23,6 +23,10 @@ def selectElementsSC(section, userID):
 def selectGraphSC(section, userID):
     return selectGraph(section, userID)
 
+@app.route('/info/<section>/<ID>', methods=['GET'])
+def selectInfoSC(section, ID):
+    return selectInfo(section, ID)
+
 @app.route('/<section>/grouped/<userID>', methods=['GET'])
 def selectGroupedElementsSC(section, userID):
     return selectGroupedElements(section, userID)

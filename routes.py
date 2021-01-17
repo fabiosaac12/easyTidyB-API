@@ -45,6 +45,20 @@ def selectGraph(section, userID):
         resultJSON = result
     return jsonify(resultJSON)
 
+
+# to send info of one element
+@wait
+def selectInfo(section, ID):
+    query = "SELECT * FROM {}View WHERE id={}".format(section.lower(), ID)
+    result = sql.run(query) 
+
+    try:
+        resultJSON = json.loads(result)
+    except:
+        resultJSON = result
+    return jsonify(resultJSON)
+
+
 # to send all gruped elements of the table
 @wait
 def selectGroupedElements(section, userID):
