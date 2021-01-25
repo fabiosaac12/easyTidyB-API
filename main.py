@@ -1,4 +1,4 @@
-# IMPORTS
+# IMPORTS 
 import os
 from flask import Flask, request
 from flask_cors import CORS
@@ -6,11 +6,10 @@ from flask_cors import CORS
 
 # SETTINGS
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/*": {"origins": os.environ["CLIENT_DOMAIN"]}})
 app.config['CORS_HEADERS'] = 'Content_Type'
 app.secret_key = os.environ["SECRET_KEY"]
 app.port = 9000
-
 
 # ROUTES
 from routes import *

@@ -7,8 +7,8 @@ This is the API of Easy Tidy Business App. This API contains certain routes whic
 - MySQL-connector
 
 ### App complementations:
-This app objective is to be accessed by a frontend whose code is on the [easyTidyB-Frontend repository](https://github.com/fabiosaac12/easyTidyB-Frontend):
-This API depends on a MySQL database, whose code is on the [easyTidyB-DB repository](https://github.com/fabiosaac12/easyTidyB-DB):
+- This app objective is to be accessed by a frontend whose code is on the [easyTidyB-Frontend repository](https://github.com/fabiosaac12/easyTidyB-Frontend)
+- This API depends on a MySQL database, whose code is on the [easyTidyB-DB repository](https://github.com/fabiosaac12/easyTidyB-DB)
 
 ### How to clone this repository and start using this app locally:
 1. Open the terminal
@@ -17,3 +17,4 @@ This API depends on a MySQL database, whose code is on the [easyTidyB-DB reposit
 4. `pip install -r requirements.txt` --> to install all the required modules
 5. Set the necessary environment variables in the init.sh file
 6. `./init.sh` --> executing that file will start the API server on port 9000 with the pre-established environment variables
+

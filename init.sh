@@ -5,5 +5,6 @@
 #export DB_USER=
 #export DB_PW=
 #export DB_DB=
+#export CLIENT_DOMAIN=
 
 python ./main.py
