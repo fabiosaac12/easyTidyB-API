@@ -6,6 +6,7 @@ import time
 from helpers.functions import isSpace
 
 
+
 # to prevent various requests at same time
 requesting = False
 def wait(function):
@@ -48,8 +49,8 @@ def selectGraph(section, userID):
 
 # to send info of one element
 @wait
-def selectInfo(section, ID):
-    query = "SELECT * FROM {}View WHERE id={}".format(section.lower(), ID)
+def selectInfo(section, elementID):
+    query = "SELECT * FROM {}View WHERE id={}".format(section.lower(), elementID)
     result = sql.run(query) 
 
     try:
@@ -161,7 +162,7 @@ def login(user):
 
     try:
         resultJSON = json.loads(result)[0]
-        return jsonify(resultJSON)
+        return resultJSON
     except IndexError:
         return {
             "username": False,
