@@ -91,7 +91,6 @@ def updateElementSC(section):
 @app.route('/<section>/graph', methods = ['GET'])
 @jwt_required
 def selectGraphSC(section):
-    print(get_raw_jwt())
     userID = get_jwt_identity()
     return selectGraph(section, userID)
 
@@ -127,4 +126,4 @@ if __name__ == "__main__":
         from waitress import serve
         serve(app = app, host = "0.0.0.0", port = app.port)
     else:
-        app.run(host = "localhost", port = app.port, debug = True)
+        app.run(host = "0.0.0.0", port = app.port, debug = True)
