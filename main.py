@@ -36,10 +36,15 @@ def loginSC():
         "username": request.authorization['username'],
         "password": request.authorization['password']
     }
+    print("\n\n\n\n")
     result = login(data)
-    if result['userID']:
-        accessToken = create_access_token(identity = result['userID'])
-        return jsonify(accessToken = accessToken)
+    print(result)
+    try:
+        if result['userID']:
+            accessToken = create_access_token(identity = result['userID'])
+            return jsonify(accessToken = accessToken)
+    except KeyError:
+        return jsonify(message='Database Error')
     return jsonify( result )
 
 @app.route('/signup', methods = ['POST'])
@@ -49,9 +54,12 @@ def signupSC():
         "password": request.authorization['password']
     }
     result = signup(data)
-    if result['id']:
-        accessToken = create_access_token(identity = result['id'])
-        return jsonify(accessToken = accessToken)
+    try:
+        if result['id']:
+            accessToken = create_access_token(identity = result['id'])
+            return jsonify(accessToken = accessToken)
+    except KeyError:
+        return jsonify(message='Database Error')
     return jsonify( result )
 
 @app.route('/logout', methods=['DELETE'])
